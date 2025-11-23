@@ -95,6 +95,12 @@
                 console.log(`The total cost with Tax (10%) is : $${cost*0.1+cost}`);
                 alert(`The total order is : ${coffeeQua+bagelsQua+soupQua} & \nThe total cost is $${cost*0.1+cost}`);
             ">Total Order</button>
+            <button onclick="
+             coffeeQua=0,bagelsQua=0,soupQua=0;
+             costSoup = 0,costBagels=0,costCoff=0;
+
+             alert(`The total order is: ${coffeeQua+bagelsQua+soupQua}`)
+            ">Reset Cart</button>
         </div>
     </div>
 
