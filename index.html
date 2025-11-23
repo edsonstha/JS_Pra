@@ -3,49 +3,100 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Find Cost</title>'
+    <title>Find Cost</title>
     <style>
-        button{
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 26px;
+            background: #f2f4f7;
+            padding: 30px;
+            text-align: center;
+        }
+
+        p {
+            font-weight: bold;
+            margin-bottom: 20px;
+        }
+
+        .container {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            width: 300px;
+            margin: auto;
+        }
+
+        button {
             font-size: 20px;
+            padding: 12px 20px;
+            border: none;
+            border-radius: 10px;
+            background: #0078ff;
+            color: white;
+            cursor: pointer;
+            transition: 0.2s;
+        }
+
+        button:hover {
+            background: #0056cc;
+            transform: scale(1.05);
+        }
+
+        .total-btn {
+            background: #28a745;
+        }
+
+        .total-btn:hover {
+            background: #1e7e34;
+        }
+
+        .card {
+            background: white;
+            padding: 25px;
+            border-radius: 15px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
         }
     </style>
 </head>
-<body style="font-size: 30px;">
-    <p>Click on them for order</p>
-    <button onclick="
-    coffeeQua ++;
-    console.log(`\nCoffee Order : ${coffeeQua}`);
-    costCoff = (coffeeTotal)*(coffeeQua);
-    console.log(`coffee price is : $${costCoff}`);
-    alert( `Order taken : ${coffeeQua}`);
-    ">Coffee : $5</button>
+<body>
     
-    <button onclick="
-     bagelsQua ++;
-    console.log(`\nBagels Order : ${bagelsQua}`);
-    costBagels = (basgelsTotal)*(bagelsQua);
-    console.log(`Bagels price is : $${costBagels}`);
-    alert( `Order taken : ${bagelsQua}`);
-    ">Bagels : $3</button>
+    <div class="card">
+        <p>Click on them to place your order</p>
 
-    <button 
-    onclick="
-    soupQua ++;
-    console.log(`\nSoup Order : ${soupQua}`);
-    costSoup = (soupTotal)*(soupQua);
-    console.log(`Bagels price is : $${costSoup}`);
-    alert( `Order taken : ${soupQua}`);
-    ">Soup : $9</button>
+        <div class="container">
+            <button onclick="
+                coffeeQua ++;
+                console.log(`\nCoffee Order : ${coffeeQua}`);
+                costCoff = (coffeeTotal)*(coffeeQua);
+                console.log(`coffee price is : $${costCoff}`);
+                alert( `Order taken : ${coffeeQua}`);
+            ">Coffee : $5</button>
 
-    <button onclick="
-    cost = costCoff + costBagels + costSoup;
-    console.log(`\nThe total order is : ${coffeeQua+bagelsQua+soupQua} `);
-    console.log(`The cost is : $${cost}`);
-    console.log(`The total cost with Tax (10%) is : $${cost*0.1+cost}`);
-    alert(`The total order is : ${coffeeQua+bagelsQua+soupQua} & \nThe total cost is $${cost*0.1+cost}`);
+            <button onclick="
+                bagelsQua ++;
+                console.log(`\nBagels Order : ${bagelsQua}`);
+                costBagels = (basgelsTotal)*(bagelsQua);
+                console.log(`Bagels price is : $${costBagels}`);
+                alert( `Order taken : ${bagelsQua}`);
+            ">Bagels : $3</button>
 
-    ">Total order</button>
+            <button onclick="
+                soupQua ++;
+                console.log(`\nSoup Order : ${soupQua}`);
+                costSoup = (soupTotal)*(soupQua);
+                console.log(`Bagels price is : $${costSoup}`);
+                alert( `Order taken : ${soupQua}`);
+            ">Soup : $9</button>
 
+            <button class="total-btn" onclick="
+                cost = costCoff + costBagels + costSoup;
+                console.log(`\nThe total order is : ${coffeeQua+bagelsQua+soupQua} `);
+                console.log(`The cost is : $${cost}`);
+                console.log(`The total cost with Tax (10%) is : $${cost*0.1+cost}`);
+                alert(`The total order is : ${coffeeQua+bagelsQua+soupQua} & \nThe total cost is $${cost*0.1+cost}`);
+            ">Total Order</button>
+        </div>
+    </div>
 
     <script>
         // For coffee
